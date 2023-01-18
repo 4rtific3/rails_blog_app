@@ -117,3 +117,26 @@ In table_name_controller.rb
 def show
   @article = Article.find(params1[:id])
 end
+
+Template for form view page
+
+<h1>Create a new article</h1>
+
+<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
