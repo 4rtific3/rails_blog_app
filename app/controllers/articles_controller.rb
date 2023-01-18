@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # When pulling the hash from the user input, the entities need to be whitelisted
     # Within the params, the article symbol is required, and within that, the title and description are permitted
@@ -25,6 +29,16 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render "new"
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was updated successfully"
+      redirect_to @article
+    else
+      render "edit"
     end
   end
 
