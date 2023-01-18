@@ -9,18 +9,23 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    # Instance var is created when page is first loaded to create an empty var that the error handling (validation) can read
+    @article = Article.new
   end
 
   def create
     # When pulling the hash from the user input, the entities need to be whitelisted
     # Within the params, the article symbol is required, and within that, the title and description are permitted
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
-
-    # Redirecting to the new article page
-    # redirect_to article_path(@article)
-    redirect_to @article
+    if @article.save
+      # Displaying a feedback message when the save is successful
+      flash[:notice] = "Article was created successfully"
+      # Redirecting to the new article page
+      # redirect_to article_path(@article)
+      redirect_to @article
+    else
+      render "new"
+    end
   end
 
 end
