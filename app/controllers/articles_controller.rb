@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
     # When pulling the hash from the user input, the entities need to be whitelisted
     # Within the params, the article symbol is required, and within that, the title and description are permitted
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       # Displaying a feedback message when the save is successful
       flash[:notice] = "Article was created successfully"
