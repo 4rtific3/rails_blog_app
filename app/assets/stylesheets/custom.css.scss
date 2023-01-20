@@ -1,0 +1,42 @@
+@import "bootstrap";
+
+html, body {
+  height: 100%;
+}
+
+.navbar {
+  background-color: black !important;
+  margin-bottom: 0;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: white;
+}
+
+#page-content {
+  background-color: lightgray;
+  height: 100%;
+}
+
+#home-container {
+  padding-top: 25px;
+}
+
+#home-jumbotron {
+  background-image: asset-url("home_jumbotron.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.copyright-link {
+  text-decoration: none;
+}
+
+.copyright-link:hover{
+  text-decoration: underline;
+}
