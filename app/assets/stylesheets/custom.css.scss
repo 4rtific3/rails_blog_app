@@ -1,6 +1,7 @@
 @import "bootstrap";
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -19,11 +20,12 @@ html, body {
 
 #page-content {
   background-color: lightgray;
-  height: 100%;
+  min-height: 100%;
 }
 
 #home-container {
   padding-top: 25px;
+  min-height: 100%;
 }
 
 #home-jumbotron {
@@ -33,10 +35,10 @@ html, body {
   background-size: cover;
 }
 
-.copyright-link {
+.copyright-link, .article-titles {
   text-decoration: none;
 }
 
-.copyright-link:hover{
+.copyright-link:hover, .article-titles:hover {
   text-decoration: underline;
 }
