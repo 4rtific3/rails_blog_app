@@ -2,7 +2,7 @@
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
-    <strong>The following errors prevented the article from being saved:</strong>
+    <strong>The following errors prevented the <%= obj.class.name.downcase %> from being saved:</strong>
   
     <ul>
       <% obj.errors.full_messages.each do |msg| %>
