@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
-      <%= render "errors" %>
+      <%= render "shared/errors", obj: @article %>
       <%# Form should be pre-filled %>
       <%= form_with(model: @article, local: true, data: {turbo: false}, class:"shadow p-3 mb-2 bg-info bg-opacity-50 rounded") do |f| %>
 
