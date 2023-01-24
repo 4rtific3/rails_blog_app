@@ -72,3 +72,4 @@ group :test do
 end
 
 gem "bootstrap", "~> 5.2"
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
